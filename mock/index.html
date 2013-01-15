@@ -2,7 +2,7 @@
 <html lang="jp">
 <head>
   <meta charset="utf-8">
-  <title>digup</title>
+  <title>digup -home-</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -34,6 +34,7 @@ body {
 </head>
 <body>
 
+<!-- header -->
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
@@ -45,7 +46,7 @@ body {
       <a class="brand" href="#">digup</a>
       <div class="nav-collapse">
         <ul class="nav">
-          <li class="active"><a href="#">Home</a></li>
+          <li class="active"><a href="index.html">Home</a></li>
           <li>
             <a href="#digPostModal" role="button" data-toggle="modal">dig</a>
           </li>
@@ -55,10 +56,10 @@ body {
         </form>
         <ul class="nav pull-right">
           <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-th"></i></b></a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user"></i></b></a>
             <ul class="dropdown-menu">
-              <li><a href="#">dig</a></li>
-              <li><a href="#">チェックしているdig</a></li>
+              <li><a href="my_dig.html">投稿したdig</a></li>
+              <li><a href="check_dig.html">チェックしているdig</a></li>
               <li><a href="#">アカウント</a></li>
               <li class="divider"></li>
               <li>
@@ -71,8 +72,9 @@ body {
     </div>
   </div>
 </div>
-<div class="container">
+<!-- /header -->
 
+<div class="container">
   <!-- Example row of columns -->
   <div class="row">
     <div class="span12">
@@ -205,7 +207,7 @@ body {
         </div>
     </div>
   </div>
-    <hr>
+  <hr>
   <footer>
     <p>&copy; Company 2012</p>
   </footer>
@@ -215,12 +217,23 @@ body {
 <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Modal header</h3>
+    <h3 id="myModalLabel">dig -<a href="#">探しています</a>-</h3>
   </div>
   <div class="modal-body">
-    <p>One fine body…</p>
+    <h3>phpを勉強したい人探しています</h3>
+    <p><img src="images/php.gif" height="67" width="120" /></p>
+    <p>
+      大阪でphpの勉強会を開きたいと思っています、対象はphpを業務で使っているけど、正直オブジェクト指向とかいまいちわかんないんだよね〜って人を対象にしたいです
+      形式は通常の勉強会のような発表を聞くでも形ではなく、なにかお代にそって実際にコードを書いてみたいです、書いたコードについてでレビューを行えたらと思います
+    </p>
+    <ul class="inline">
+      <li><a href="#">#勉強会</a></li>
+      <li><a href="#">#大阪</a></li>
+      <li><a href="#">#php</a></li>
+    </ul>
   </div>
   <div class="modal-footer">
+    <a href="#" class="btn btn-primary">digをチェック</a>
     <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
   </div>
 </div>
@@ -251,53 +264,47 @@ body {
     <h3 id="myModalLabel">digを投稿</h3>
   </div>
   <div class="modal-body">
-
-
-
-<form class="form-horizontal">
-  <fieldset>
-    <div class="control-group">
-      <label class="control-label" for="input01">digのカテゴリ</label>
-      <div class="controls">
-        <select class="span3">
-          <option>digのカテゴリ</option>
-          <option>探しています</option>
-          <option>売りたい</option>
-          <option>買いたい</option>
-        </select>
-      </div>
-    </div>
-    <div class="control-group">
-      <label class="control-label" for="fileInput">digの写真</label>
-      <div class="controls">
-        <input class="input-file" id="fileInput" type="file" style="display:none;">
-        <div class="input-append">
-          <input class="span2" id="photo-dummy" type="text">
-          <button class="btn btn-success" onclick="$('input[id=fileInput]').click();" type="button">写真を選択する</button>
+    <form class="form-horizontal">
+      <fieldset>
+        <div class="control-group">
+          <label class="control-label" for="input01">digのカテゴリ</label>
+          <div class="controls">
+            <select class="span3">
+              <option>digのカテゴリ</option>
+              <option>探しています</option>
+              <option>売りたい</option>
+              <option>買いたい</option>
+            </select>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="control-group">
-      <label class="control-label" for="textarea">詳しいdig</label>
-      <div class="controls">
-        <textarea class="input-xlarge" id="textarea" rows="3" placeholder="digの内容を書いて下さい" style="width:300px; height:150px;"></textarea>
-        <span class="help-inline">
-          <p class="text-error"><strong>※</strong> 行頭に「*」をつけるとタイトルとして扱います</p>
-        </span>
-        <span class="help-inline">
-          <p class="text-error"><strong>※</strong> 行頭に「#」をつけるとタグとして扱います</p>
-        </span>
-      </div>
-    </div>
-
-    <div class="form-actions">
-      <button type="submit" class="btn btn-primary">digを投稿する</button>
-    </div>
-  </fieldset>
-</form>
-
-
-
+        <div class="control-group">
+          <label class="control-label" for="fileInput">digの写真</label>
+          <div class="controls">
+            <input class="input-file" id="fileInput" type="file" style="display:none;">
+            <div class="input-append">
+              <input class="span2" id="photo-dummy" type="text">
+              <button class="btn btn-success" onclick="$('input[id=fileInput]').click();" type="button">写真を選択する</button>
+            </div>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="textarea">詳しいdig</label>
+          <div class="controls">
+            <textarea class="input-xlarge" id="textarea" rows="3" placeholder="digの内容を書いて下さい" style="width:300px; height:150px;"></textarea>
+            <span class="help-inline">
+              <p class="text-error"><strong>※</strong> 行頭に「*」をつけるとタイトルとして扱います</p>
+            </span>
+            <span class="help-inline">
+              <p class="text-error"><strong>※</strong> 行頭に「#」をつけるとタグとして扱います</p>
+            </span>
+          </div>
+        </div>
+    
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">digを投稿する</button>
+        </div>
+      </fieldset>
+    </form>
   </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
