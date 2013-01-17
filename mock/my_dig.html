@@ -125,8 +125,8 @@ body {
               <dt></dt>
               <dd>
                 <a href="detail_dig.html" class="btn btn-warning">詳しく見る</a>
-                <a href="#" class="btn btn-info"><strong>このdigを見た人</strong></a>
-                <a href="#" class="btn btn-primary"><strong>このdigをチェックしている人</strong></a>
+                <a href="#lockModal" role="button" data-toggle="modal" class="btn btn-info"><strong>このdigを見た人</strong></a>
+                <a href="#checkModal" role="button" data-toggle="modal" class="btn btn-primary"><strong>このdigをチェックしている人</strong></a>
                 <a href="#" class="btn btn-danger">digを削除する</a>
               </dd>
             </dl>
@@ -159,8 +159,8 @@ body {
               <dt></dt>
               <dd>
                 <a href="detail_dig.html" class="btn btn-warning">詳しく見る</a>
-                <a href="#" class="btn btn-info"><strong>このdigを見た人</strong></a>
-                <a href="#" class="btn btn-primary"><strong>このdigをチェックしている人</strong></a>
+                <a href="#lockModal" role="button" data-toggle="modal" class="btn btn-info"><strong>このdigを見た人</strong></a>
+                <a href="#checkModal" role="button" data-toggle="modal" class="btn btn-primary"><strong>このdigをチェックしている人</strong></a>
                 <a href="#" class="btn btn-danger">digを削除する</a>
               </dd>
             </dl>
@@ -193,8 +193,8 @@ body {
               <dt></dt>
               <dd>
                 <a href="detail_dig.html" class="btn btn-warning">詳しく見る</a>
-                <a href="#" class="btn btn-info"><strong>このdigを見た人</strong></a>
-                <a href="#" class="btn btn-primary"><strong>このdigをチェックしている人</strong></a>
+                <a href="#lockModal" role="button" data-toggle="modal" class="btn btn-info"><strong>このdigを見た人</strong></a>
+                <a href="#checkModal" role="button" data-toggle="modal" class="btn btn-primary"><strong>このdigをチェックしている人</strong></a>
                 <a href="#" class="btn btn-danger">digを削除する</a>
               </dd>
             </dl>
@@ -227,8 +227,8 @@ body {
               <dt></dt>
               <dd>
                 <a href="detail_dig.html" class="btn btn-warning">詳しく見る</a>
-                <a href="#" class="btn btn-info"><strong>このdigを見た人</strong></a>
-                <a href="#" class="btn btn-primary"><strong>このdigをチェックしている人</strong></a>
+                <a href="#lockModal" role="button" data-toggle="modal" class="btn btn-info"><strong>このdigを見た人</strong></a>
+                <a href="#checkModal" role="button" data-toggle="modal" class="btn btn-primary"><strong>このdigをチェックしている人</strong></a>
                 <a href="#" class="btn btn-danger">digを削除する</a>
               </dd>
             </dl>
@@ -261,8 +261,8 @@ body {
               <dt></dt>
               <dd>
                 <a href="detail_dig.html" class="btn btn-warning">詳しく見る</a>
-                <a href="#" class="btn btn-info"><strong>このdigを見た人</strong></a>
-                <a href="#" class="btn btn-primary"><strong>このdigをチェックしている人</strong></a>
+                <a href="#lockModal" role="button" data-toggle="modal" class="btn btn-info"><strong>このdigを見た人</strong></a>
+                <a href="#checkModal" role="button" data-toggle="modal" class="btn btn-primary"><strong>このdigをチェックしている人</strong></a>
                 <a href="#" class="btn btn-danger">digを削除する</a>
               </dd>
             </dl>
@@ -277,6 +277,37 @@ body {
     <p>&copy; Company 2012</p>
   </footer>
 </div> <!-- /container -->
+
+<!-- dig 見た人 modal window -->
+<div id="lockModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">digを見た人</h3>
+  </div>
+  <div class="modal-body">
+みた人
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>
+<!-- / dig 見た人 modal window -->
+
+<!-- dig チェックした人 modal window -->
+<div id="checkModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">digをチェックした人</h3>
+  </div>
+  <div class="modal-body">
+チェックした人
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>
+<!-- / dig チェックした人 modal window -->
+
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
