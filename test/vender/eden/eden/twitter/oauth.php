@@ -19,6 +19,8 @@ class Eden_Twitter_Oauth extends Eden_Class {
 	-------------------------------*/
 	const REQUEST_URL 		= 'https://api.twitter.com/oauth/request_token'; 
 	const AUTHORIZE_URL		= 'https://api.twitter.com/oauth/authorize';
+    //add
+    const AUTHENTICATE_URL	= 'https://api.twitter.com/oauth/authenticate';
 	const ACCESS_URL		= 'https://api.twitter.com/oauth/access_token';
 	
 	/* Public Properties
@@ -76,27 +78,50 @@ class Eden_Twitter_Oauth extends Eden_Class {
 			->setSignatureToHmacSha1()
 			->getQueryResponse();
 	}
-	
+
 	/**
 	 * Returns the URL used for login. 
 	 * 
 	 * @param string the request key
 	 * @param string
+	 * @param string the auth type authorize or authenticate
 	 * @param boolean force user re-login
 	 * @return string
 	 */
-	public function getLoginUrl($token, $redirect, $force_login = false) {
+	// add $login_type = 'authorize',
+	// --- 3番目の引数を追加
+	public function getLoginUrl($token, $redirect, $login_type = 'authorize', $force_login = false) {
 		//Argument tests
 		Eden_Twitter_Error::i()
 			->argument(1, 'string')		//Argument 1 must be a string
 			->argument(2, 'string')		//Argument 2 must be a string
-			->argument(3, 'bool');  	//Argument 3 must be a boolean
+			->argument(3, 'string')		//Argument 2 must be a string  add
+			->argument(4, 'bool');  	//Argument 3 must be a boolean
 		
 		//build the query
 		$query = array('oauth_token' => $token, 'oauth_callback' => $redirect, 'force_login' => (int)$force_login);
 		$query = http_build_query($query);
-		
-		return self::AUTHORIZE_URL.'?'.$query;
+
+		// add
+		switch ($login_type) {
+			case 'authorize':
+				
+				$url = self::AUTHORIZE_URL;
+				break;
+
+			case 'authenticate':
+				# code...
+			    $url = self::AUTHENTICATE_URL;
+				break;
+			
+			default:
+				# code...
+				break;
+		}
+
+		// add
+		//return self::AUTHORIZE_URL.'?'.$query;
+		return $url . '?' . $query;
 	}
 	
 	/**
