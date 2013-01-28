@@ -105,7 +105,7 @@ class Eden_Twitter_Oauth extends Eden_Class {
 		// add
 		switch ($login_type) {
 			case 'authorize':
-				
+
 				$url = self::AUTHORIZE_URL;
 				break;
 

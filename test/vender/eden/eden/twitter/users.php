@@ -30,9 +30,9 @@ class Eden_Twitter_Users extends Eden_Twitter_Base {
 	const URL_REMOVE_BLOCKING			= 'https://api.twitter.com/1.1/blocks/destroy.json';
 	const URL_LOOK_UP					= 'https://api.twitter.com/1.1/users/lookup.json';
 	const URL_SEARCH					= 'https://api.twitter.com/1/users/search.json';
-	const URL_SHOW						= 'https://api.twitter.com/1/users/show.json';
-	const URL_CONTRIBUTEES				= 'https://api.twitter.com/1/users/contributees.json';
-	const URL_CONTRIBUTORS				= 'https://api.twitter.com/1/users/contributors.json';
+	const URL_SHOW						= 'https://api.twitter.com/1.1/users/show.json';
+	const URL_CONTRIBUTEES				= 'https://api.twitter.com/1.1/users/contributees.json';
+	const URL_CONTRIBUTORS				= 'https://api.twitter.com/1.1/users/contributors.json';
 
 	/* Public Properties
 	-------------------------------*/
@@ -275,7 +275,7 @@ class Eden_Twitter_Users extends Eden_Twitter_Base {
 		if($this->_name) {
 			$this->_query['screen_name'] = $name;
 		}
-				
+
 		return $this->_getResponse(self::URL_CONTRIBUTEES, $this->_query);
 	}
 	

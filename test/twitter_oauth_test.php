@@ -30,7 +30,7 @@ $token = $auth->getRequestToken();
 $_SESSION["request_secret"] = $token["oauth_token_secret"];
 
 // get login url
-$login = $auth->getLoginUrl($token["oauth_token"], "http://localhost/digup/test/twitter_callback.php", "authenticate", true);
+$login = $auth->getLoginUrl($token["oauth_token"], "http://localhost/digup/test/twitter_callback.php", "authorize", true);
 
 // location 
 header("Location:" . $login);
