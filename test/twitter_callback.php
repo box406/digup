@@ -29,14 +29,22 @@ eden()->setLoader();
 $auth = eden("twitter")->auth($api_setting["twitter"]["key"], $api_setting["twitter"]["pass"]);
 //$pre($auth);
 
-// get access token
-$token = $auth->getAccessToken($_GET['oauth_token'], $_SESSION['request_secret'], $_GET['oauth_verifier']);
-//$pre($token);
+if (!empty($_SESSION['request_secret'])) {
 
-// access to users info 
-$users = eden('twitter')->users($api_setting['twitter']['key'], $api_setting['twitter']['pass'], $token['oauth_token'], $token['oauth_token_secret']);
-//$pre($users);
+    // get access token
+    $token = $auth->getAccessToken($_GET['oauth_token'], $_SESSION['request_secret'], $_GET['oauth_verifier']);
+    //$pre($token);
 
-// get users info
-$user_profile = $users->includeEntities()->skipStatus()->getContributees($token['user_id'], $token['screen_name']);
-$pre($user_profile);
+    // access to users info 
+    $users = eden('twitter')->users($api_setting['twitter']['key'], $api_setting['twitter']['pass'], $token['oauth_token'], $token['oauth_token_secret']);
+    //$pre($users);
+
+    // get users info
+    //$user_profile = $users->includeEntities()->skipStatus()->getContributees($token['user_id'], $token['screen_name']);
+    // $token['user_id']がなぜかstringで渡されるので明示的に型をキャストする
+    $user_profile = $users->getDetail((int) $token['user_id']);
+    $pre($user_profile);
+
+} else {
+    echo 'request_secret is none';
+}
