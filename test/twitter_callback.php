@@ -45,6 +45,9 @@ if (!empty($_SESSION['request_secret'])) {
     $user_profile = $users->getDetail((int) $token['user_id']);
     $pre($user_profile);
 
+    // tweets test
+    $tweets = eden('twitter')->tweets($api_setting['twitter']['key'], $api_setting['twitter']['pass'], $token['oauth_token'], $token['oauth_token_secret']);
+    $tweets->tweet('eden test');
 } else {
     echo 'request_secret is none';
 }
