@@ -28,9 +28,12 @@ $auth = eden("twitter")->auth($api_setting["twitter"]["key"], $api_setting["twit
 // get request token
 $token = $auth->getRequestToken();
 $_SESSION["request_secret"] = $token["oauth_token_secret"];
-
+//var_dump($token);
 // get login url
-$login = $auth->getLoginUrl($token["oauth_token"], "http://localhost/digup/test/twitter_callback.php", "authorize", true);
+// authorize
+// authenticate
+$login = $auth->getLoginUrl($token["oauth_token"], "http://localhost/digup/test/twitter_callback.php", "authenticate", true);
+//var_dump($login);
 
 // location 
 header("Location:" . $login);
