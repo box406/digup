@@ -19,44 +19,129 @@
 
 $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
 ?>
+
 <!DOCTYPE html>
-<html>
+<html lang="jp">
 <head>
-	<?php echo $this->Html->charset(); ?>
-	<title>
-		<?php echo $cakeDescription ?>:
-		<?php echo $title_for_layout; ?>
-	</title>
-	<?php
-		echo $this->Html->meta('icon');
+  <?php echo $this->Html->charset(); ?>
+  <title>
+  <?php echo $cakeDescription ?>:
+  <?php echo $title_for_layout; ?>
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+<?php
+  echo $this->Html->css('bootstrap.min');
+  //echo $this->Html->meta('icon');
+  //echo $this->Html->css('cake.generic');
+  //echo $this->fetch('meta');
+  //echo $this->fetch('css');
+  //echo $this->fetch('script');
+?>
+  <!-- Le styles -->
+  <!-- <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+  
+  <style type="text/css">
+body { 
+  padding-top: 60px; 
+  padding-bottom: 40px;
+}
+.thumbnail {
+  border: 1px solid #DDD;
+  padding:5px;
+}
+  </style>
+<?php
+  echo $this->Html->css('bootstrap-responsive.min');
+?>
+  <!-- <link href="../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"> -->
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 
-		echo $this->Html->css('cake.generic');
-
-		echo $this->fetch('meta');
-		echo $this->fetch('css');
-		echo $this->fetch('script');
-	?>
+  <!-- Le fav and touch icons -->
+  <link rel="shortcut icon" href="http://twitter.github.com/bootstrap/assets/images/favicon.ico">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="http://twitter.github.com/bootstrap/assets/images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="http://twitter.github.com/bootstrap/assets/images/apple-touch-icon-114x114.png">
 </head>
 <body>
-	<div id="container">
-		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
-		</div>
-		<div id="content">
 
-			<?php echo $this->Session->flash(); ?>
+<!-- header -->
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="#">digup</a>
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li>
+            <a href="#digPostModal" role="button" data-toggle="modal">dig</a>
+          </li>
+        </ul>
+        <form class="navbar-search pull-left">
+          <input type="text" class="search-query" placeholder="Search">
+        </form>
+        <ul class="nav pull-right">
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">menu</b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">アカウント</a></li>
+              <li class="divider"></li>
+              <li>
+                <a href="#loginModal" role="button" data-toggle="modal">digupにログイン</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+<!-- /header -->
 
-			<?php echo $this->fetch('content'); ?>
-		</div>
-		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false)
-				);
-			?>
-		</div>
-	</div>
-	<?php echo $this->element('sql_dump'); ?>
+<?php echo $this->fetch('content'); ?>
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-transition.js"></script>
+<script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-alert.js"></script>
+<script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-modal.js"></script>
+<script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-dropdown.js"></script>
+<script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-scrollspy.js"></script>
+<script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-tab.js"></script>
+<script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-tooltip.js"></script>
+<script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-popover.js"></script>
+<script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-button.js"></script>
+<script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-collapse.js"></script>
+<script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-carousel.js"></script>
+<script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-typeahead.js"></script>
+
+<script>
+
+$(function() {
+
+   $('.dropdown-toggle').dropdown()
+   
+   // input type="file" の拡張
+   $('input[id=fileInput]').change(function(){
+
+       $("#photo-dummy").val($(this).val());
+   });
+});
+
+</script>
+<?php echo $this->element('sql_dump'); ?>
 </body>
 </html>
+
+
