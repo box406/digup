@@ -71,23 +71,23 @@
     <h3 id="myModalLabel">digを作る</h3>
   </div>
   <div class="modal-body">
-    <form class="form-horizontal">
+    <form class="form-horizontal" method="post" action="<?php echo $this->Html->url("/questionary/regist/"); ?>">
       <fieldset>
         <div class="control-group">
           <label class="control-label" for="textarea">アンケートの内容</label>
           <div class="controls">
-            <textarea class="input-xlarge" id="textarea" rows="3" placeholder="アンケートの内容を書いて下さい" style="width:300px; height:50px;"></textarea>
+            <textarea name="detail" class="input-xlarge" id="textarea" rows="3" placeholder="アンケートの内容を書いて下さい" style="width:300px; height:50px;"></textarea>
           </div>
         </div>
         <div class="control-group">
           <label class="control-label" for="textarea">アンケートのタイプ<br>-複数回答-</label>
           <div class="controls">
             <label class="radio">
-              <input type="radio" name="question_type" id="question_type1" value="1">
+              <input type="radio" name="type" id="question_type1" value="1">
               あり
             </label>
             <label class="radio">
-              <input type="radio" name="question_type" id="question_type2" value="2">
+              <input type="radio" name="type" id="question_type2" value="2">
               なし
             </label>
           </div>
@@ -132,10 +132,19 @@
         <div class="control-group">
           <label class="control-label" for="textarea">質問</label>
           <div class="controls" style="padding-bottom: 5px;">
-            <input type="text" name="question" class="input-xlarge" value="" />
+            <input type="text" name="question[]" class="input-xlarge" value="" />
           </div>
           <div class="controls" style="padding-bottom: 5px;">
-            <input type="text" name="question" class="input-xlarge" value="" />
+            <input type="text" name="question[]" class="input-xlarge" value="" />
+          </div>
+          <div class="controls" style="padding-bottom: 5px;">
+            <input type="text" name="question[]" class="input-xlarge" value="" />
+          </div>
+          <div class="controls" style="padding-bottom: 5px;">
+            <input type="text" name="question[]" class="input-xlarge" value="" />
+          </div>
+          <div class="controls" style="padding-bottom: 5px;">
+            <input type="text" name="question[]" class="input-xlarge" value="" />
           </div>
         </div>
         <div class="control-group">

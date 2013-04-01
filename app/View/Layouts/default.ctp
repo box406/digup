@@ -78,10 +78,10 @@ body {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand" href="#">digup</a>
+      <a class="brand" href="<?php echo $this->Html->url("/"); ?>">digup</a>
       <div class="nav-collapse">
         <ul class="nav">
-          <li class="active"><a href="index.html">Home</a></li>
+          <li class="active"><a href="<?php echo $this->Html->url("/"); ?>">Home</a></li>
           <li>
             <a href="#digPostModal" role="button" data-toggle="modal">dig</a>
           </li>
