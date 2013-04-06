@@ -2,12 +2,17 @@
 
 class questionary extends AppModel {
 
-    public $name = "questionary";
     public $useTable = "questionary";
-
-    public function validate($data) {
-
-    }
+    public $validate = array(
+        "detail" => array(
+            "rule" => array("between", 0, 140),
+            "required" => true,
+            "allowEmpty" => false,
+            "message" => "必須項目です"
+        ),
+        //"type" => array(),
+        //"period" => array()
+    );
 
     public function regist($data) {
 
@@ -21,5 +26,4 @@ class questionary extends AppModel {
 
         return $insert_info;
     }
-
 }

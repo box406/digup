@@ -2,18 +2,14 @@
 
 class question extends AppModel {
 
-    public $name = "question";
     public $useTable = "question";
 
-/*
     public function validata($data) {
 
     }
-*/
-    public function getRegistData() {
 
-        return "hoge";
-/*
+    public function getRegistData($data, $questionary_id) {
+
         foreach ($data["question"] as $suffix => $value) {
 
             if (empty($value)) {
@@ -26,6 +22,5 @@ class question extends AppModel {
             );
         }
         return $insert_info;
-*/
     }
 }
