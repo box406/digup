@@ -2,8 +2,24 @@
 
 class questionary extends AppModel {
 
-    public function hoge() {
+    public $name = "questionary";
+    public $useTable = "questionary";
 
-        var_dump("expression");
+    public function validate($data) {
+
     }
+
+    public function regist($data) {
+
+        $insert_info = array(
+            "questionary" => array(
+                "detail" => $data["detail"],
+                "type"   => $data["type"],
+                "period" => $data["period"],
+            )    
+        );
+
+        return $insert_info;
+    }
+
 }

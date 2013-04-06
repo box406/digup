@@ -71,7 +71,7 @@
     <h3 id="myModalLabel">digを作る</h3>
   </div>
   <div class="modal-body">
-    <form class="form-horizontal" method="post" action="<?php echo $this->Html->url("/questionary/regist/"); ?>">
+    <form class="form-horizontal" method="post" action="<?php echo $this->Html->url("/questionary/create/"); ?>">
       <fieldset>
         <div class="control-group">
           <label class="control-label" for="textarea">アンケートの内容</label>

@@ -55,6 +55,7 @@ body {
 <?php
   echo $this->Html->css('bootstrap-responsive.min');
 ?>
+
   <!-- <link href="../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"> -->
   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
