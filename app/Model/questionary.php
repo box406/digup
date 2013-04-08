@@ -3,6 +3,8 @@
 class questionary extends AppModel {
 
     public $useTable = "questionary";
+    public $hasMany = array("question");
+/*
     public $validate = array(
         "detail" => array(
             "rule" => array("between", 0, 140),
@@ -13,7 +15,7 @@ class questionary extends AppModel {
         //"type" => array(),
         //"period" => array()
     );
-
+*/
     public function regist($data) {
 
         $insert_info = array(
@@ -23,6 +25,14 @@ class questionary extends AppModel {
                 "period" => $data["period"],
             )    
         );
+
+        foreach ($data["question"] as $suffix => $value) {
+
+            if (empty($value)) {
+                continue;
+            }
+            $insert_info["question"][] = array("detail" => $value);            
+        }
 
         return $insert_info;
     }
