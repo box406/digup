@@ -24,10 +24,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 <html lang="jp">
 <head>
   <?php echo $this->Html->charset(); ?>
-  <title>
-  <?php echo $cakeDescription ?>:
-  <?php echo $title_for_layout; ?>
-  </title>
+  <title>digup</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -82,9 +79,11 @@ body {
       <a class="brand" href="<?php echo $this->Html->url("/"); ?>">digup</a>
       <div class="nav-collapse">
         <ul class="nav">
-          <li class="active"><a href="<?php echo $this->Html->url("/"); ?>">Home</a></li>
+          <li class="active">
+            <a href="<?php echo $this->Html->url("/"); ?>">Home</a>
+          </li>
           <li>
-            <a href="#digPostModal" role="button" data-toggle="modal">dig</a>
+            <a href="<?php echo $this->Html->url("/questionary"); ?>">dig</a>
           </li>
         </ul>
         <form class="navbar-search pull-left">
@@ -128,17 +127,6 @@ body {
 <script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-typeahead.js"></script>
 
 <script>
-
-$(function() {
-
-   $('.dropdown-toggle').dropdown()
-   
-   // input type="file" の拡張
-   $('input[id=fileInput]').change(function(){
-
-       $("#photo-dummy").val($(this).val());
-   });
-});
 
 </script>
 <?php echo $this->element('sql_dump'); ?>

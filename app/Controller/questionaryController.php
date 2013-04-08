@@ -4,6 +4,10 @@ class questionaryController extends AppController {
 
     public $uses = array("questionary", "question");
 
+    public function index() {
+        
+    }
+
     public function create() {
 
         // insert question data
