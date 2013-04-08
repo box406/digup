@@ -13,6 +13,7 @@
                 <label class="control-label" for="textarea">アンケートの内容</label>
                 <div class="controls">
                   <textarea name="detail" class="input-xlarge" id="textarea" rows="3" placeholder="アンケートの内容を書いて下さい" style="width:530px; height:100px;"></textarea>
+                  <?php //$this->Form->error("questionary.detail"); ?>
                 </div>
               </div>
               <div class="control-group">

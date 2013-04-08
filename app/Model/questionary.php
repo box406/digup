@@ -4,18 +4,28 @@ class questionary extends AppModel {
 
     public $useTable = "questionary";
     public $hasMany = array("question");
-/*
+
     public $validate = array(
         "detail" => array(
-            "rule" => array("between", 0, 140),
+            "rule" => array("between", 0, 100),
             "required" => true,
             "allowEmpty" => false,
-            "message" => "必須項目です"
+            "message" => "アンケートの内容を100文字で入力して下さい"
         ),
-        //"type" => array(),
-        //"period" => array()
+        "type" => array(
+            "rule" => array("alphaNumeric"),
+            "required" => true,
+            "allowEmpty" => false,
+            "message" => "アンケートのタイプを選んで下さい"
+        ),
+        "period" => array(
+            "rule" => array("alphaNumeric"),
+            "required" => true,
+            "allowEmpty" => false,
+            "message" => "アンケートの期間を選んで下さい"
+        )
     );
-*/
+
     public function regist($data) {
 
         $insert_info = array(
