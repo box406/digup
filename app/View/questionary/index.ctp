@@ -12,8 +12,8 @@
               <div class="control-group">
                 <label class="control-label" for="textarea">アンケートの内容</label>
                 <div class="controls">
-                  <textarea name="detail" class="input-xlarge" id="textarea" rows="3" placeholder="アンケートの内容を書いて下さい" style="width:530px; height:100px;"></textarea>
-                  <?php //$this->Form->error("questionary.detail"); ?>
+                  <textarea id="inputError" name="detail" class="input-xlarge" id="textarea" rows="3" placeholder="アンケートの内容を書いて下さい" style="width:530px; height:100px;"></textarea>
+                  <span class="help-inline" style="color:#ff2d65;"><?php echo $this->Form->error("questionary.detail"); ?></span>
                 </div>
               </div>
               <div class="control-group">
@@ -82,6 +82,7 @@
                 </div>
                 <div class="controls" style="padding-bottom: 5px;">
                   <input type="text" name="question[]" class="input-xxlarge" value="" />
+                  <span class="help-inline" style="color:#ff2d65;"><?php echo $this->Form->error("question.detail"); ?></span>
                 </div>
               </div>
               <div class="control-group">

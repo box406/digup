@@ -10,17 +10,22 @@ class questionaryController extends AppController {
 
     public function create() {
 
-        // insert question data
-        $return = $this->questionary->saveAll($this->questionary->regist($this->request->data));
+        echo "questionary:";
+        var_dump($this->questionary->validates());
+        echo "quesion:";
+        var_dump($this->question->validates());
 
         // check
-        if ($return === false) {
-            //var_dump($this->questionary->validationErrors);
+        if ($this->questionary->validates() === false || $this->question->validates() === false) {
+
             // error is questionary page
             $this->render("index");
-            return;
+        } else {
+    
+            // insert question data
+            $this->questionary->saveAll($this->questionary->regist($this->request->data), array("validate" => false));
+            $this->render("/top/index");
         }
 
-        $this->render("/top/index");
     }
 }

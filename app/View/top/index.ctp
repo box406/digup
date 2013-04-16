@@ -7,15 +7,15 @@
 
       <div class="row">
         <div class="span9">
+<?php foreach($data_info as $suffix => $value): ?>
           <div class="media" style="border:1px solid #ddd; padding: 10px;">
             <p class="pull-left">
               <img src="images/120x120.gif" height="120" width="120" style="padding-bottom: 10px;"><br />
               <a href="#" class="btn btn-primary">digをチェック</a>
             </p>
             <div class="media-body">
-              <h4 class="media-heading">ディグダグを一緒にできる仲間募集</h4>
               <p>
-縦型固定画面のゲームで、4方向レバーと1つのボタンを使用する。レバーを操作して主人公ディグダグを操作、移動先に地面があるときには掘りながら進んでいく。地中という設定ではあるが、岩を除くキャラクターに重力の概念は存在せず、地上に対して垂直に掘られた縦穴も難なく上がることが出来る。
+              <?php echo h($value["questionary"]["detail"]); ?>
               <p style="border:1px solid #ddd; padding: 10px; background-color:#f8f8f8; border-radius:3px;">
                 <img class="img-rounded" src="http://capture.heartrails.com/40x40/1361746255077?https://twitter.com/" />
                 <img class="img-rounded" src="http://capture.heartrails.com/40x40/1361746255077?https://twitter.com/" />
@@ -32,6 +32,7 @@
               </p>
             </div>
           </div>
+<?php endforeach; ?>
         </div><!-- /sapn9 -->
         <div class="span3">
           gdagagagfa
