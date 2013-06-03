@@ -8,6 +8,5 @@ class topController extends AppController {
 
         $data_info = $this->questionary->find("all");
         $this->set("data_info", $data_info);
-        //debug($data_info);
     }
 }
