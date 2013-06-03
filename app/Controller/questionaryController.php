@@ -10,10 +10,10 @@ class questionaryController extends AppController {
 
     public function create() {
 
-        echo "questionary:";
-        var_dump($this->questionary->validates());
-        echo "quesion:";
-        var_dump($this->question->validates());
+        //echo "questionary:";
+        //var_dump($this->questionary->validates());
+        //echo "quesion:";
+        //var_dump($this->question->validates());
 
         // check
         if ($this->questionary->validates() === false || $this->question->validates() === false) {
