@@ -16,6 +16,10 @@
 ._*
 .Spotlight-V100
 .Trashes
+.vagrant
+.vagrant/*
+.idea
+.idea/*
 Icon?
 ehthumbs.db
 Thumbs.db
