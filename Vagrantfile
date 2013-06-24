@@ -7,11 +7,11 @@ Vagrant.configure("2") do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "centos6.4"
+  config.vm.box = "ubuntu"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = "https://dl.dropbox.com/u/7225008/Vagrant/CentOS-6.3-x86_64-minimal.box"
+  config.vm.box_url = "http://files.vagrantup.com/lucid64.box"
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -51,7 +51,7 @@ Vagrant.configure("2") do |config|
   # Enable provisioning with Puppet stand alone.  Puppet manifests
   # are contained in a directory path relative to this Vagrantfile.
   # You will need to create the manifests directory and a manifest in
-  # the file centos6.4.pp in the manifests_path directory.
+  # the file ubuntu.pp in the manifests_path directory.
   #
   # An example Puppet manifest to provision the message of the day:
   #
@@ -79,9 +79,10 @@ Vagrant.configure("2") do |config|
      chef.cookbooks_path = "./cookbooks"
   #   chef.roles_path = "../my-recipes/roles"
   #   chef.data_bags_path = "../my-recipes/data_bags"
-     chef.add_recipe "yum::epel"
-     chef.add_recipe "yum::remi"
-
+     chef.add_recipe "httpd"
+     chef.add_recipe "mysql"
+     chef.add_recipe "php"
+     chef.add_recipe "group"
   #   chef.add_role "web"
   #
   #   # You may also specify custom JSON attributes:

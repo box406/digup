@@ -48,6 +48,10 @@ body {
   border: 1px solid #DDD;
   padding:5px;
 }
+.btn {
+  -webkit-border-radius:0px;
+  border-radius:0px;
+}
   </style>
 <?php
   echo $this->Html->css('bootstrap-responsive.min');

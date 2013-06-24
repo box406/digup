@@ -1,4 +1,4 @@
-<div class="container">
+
   <!-- Example row of columns -->
   <div class="row">
     <div class="span12">
@@ -7,6 +7,9 @@
 
       <div class="row">
         <div class="span9">
+
+<?php echo $this->Paginator->pagination(); ?>
+
 <?php foreach($data_info as $suffix => $value): ?>
           <div class="media" style="border:1px solid #ddd; padding: 10px;">
             <p class="pull-left">
@@ -33,6 +36,9 @@
             </div>
           </div>
 <?php endforeach; ?>
+
+<?php echo $this->Paginator->pagination(); ?>
+
         </div><!-- /sapn9 -->
         <div class="span3">
           gdagagagfa
@@ -45,7 +51,6 @@
   <footer>
     <p>&copy; Company 2012</p>
   </footer>
-</div> <!-- /container -->
 
 <!-- digupにログイン modal window -->
 <div id="loginModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
